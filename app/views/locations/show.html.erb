@@ -1,0 +1,17 @@
+<h1><%= @location.name %></h1>
+<%= link_to "New Crag", new_location_crag_path(@location) %>
+
+<p>Crags:</p>
+
+<ul>
+
+<% @location.crags.each do |crag| %>
+
+  <p>Name: <%= crag.name %></p>
+  <p>Region: <%= crag.region %></p>
+  <p>Rock Type: <%= crag.rock_type %></p>
+  <p>Best Season: <%= crag.season %></p>
+  <%= link_to "Contribute", edit_location_crag_path(@location) %>
+
+<% end %>
+</ul>
