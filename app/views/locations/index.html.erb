@@ -3,6 +3,8 @@
 <h2>Login or Register to Begin</h2>
 <ul>
 <% @locations.each do |location| %>
-<li><%= location.name %></li>
+<li>
+  <h3><%= link_to location.name, location_path(location) %></h3>
+</li>
 <%  end %>
 </ul>

@@ -1,4 +1,4 @@
-class LocationsController < ApplicationController
+class CragsController < ApplicationController
 
   def index
     if params[:location_id]
@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
       @crags = Crag.all
     end
   end
-  
+
   def new
   end
 end
