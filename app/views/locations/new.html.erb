@@ -1,6 +1,16 @@
 <h1>Add a Location</h1>
 <%= form_for(@location) do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name, :placeholder => "enter location name" %>
+<%= f.text_field :name, :placeholder => "enter location name" %><br>
+<%= f.fields_for :crags do |crag| %>
+<%= crag.label :name %>
+<%= crag.text_field :name %>
+<%= crag.label :region %>
+<%= crag.text_field :region %>
+<%= crag.label :rock_type %>
+<%= crag.text_field :rock_type %>
+<%= crag.label :season %>
+<%= crag.text_field :season %>
+<% end %>
     <%= f.submit %>
     <% end %>
