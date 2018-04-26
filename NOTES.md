@@ -9,3 +9,12 @@
 * If a user wants to create a crag, they can go by Location, where they will have to option to "Add a Crag".
 
 * The fields will be:  -name, -season, rock_type, and Flags (collection and empty field)
+cragflags  (need a helmet)
+(watch for snakes) - comment
+(directions are off, use gps)
+_______
+_______
+crags
+has many CragFlags through Flags(content)
+has many CragFlags
+flag_id, crag_id, comment(more specific to flag)
