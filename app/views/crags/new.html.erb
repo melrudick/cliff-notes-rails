@@ -1,0 +1,8 @@
+<h1><%= @location.name %></h1>
+<%= form_for([@location, @crag]) do |f| %>
+<%= f.text_field :name %>
+<%= f.text_field :region %>
+<%= f.text_field :rock_type %>
+<%= f.text_field :season %>
+<%= f.submit %>
+<% end %>

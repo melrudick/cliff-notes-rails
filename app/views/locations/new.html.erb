@@ -2,6 +2,7 @@
 <%= form_for(@location) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name, :placeholder => "enter location name" %><br>
+<h2>Now Add a Crag</h2>
 <%= f.fields_for :crags do |crag| %>
 <%= crag.label :name %>
 <%= crag.text_field :name %>
