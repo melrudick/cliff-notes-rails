@@ -3,6 +3,7 @@ class CragsController < ApplicationController
   def index
     if params[:location_id]
       @crags = Location.find(params[:location_id])
+      @flag = Flag.new
     else
       @crags = Crag.all
     end
@@ -15,7 +16,7 @@ class CragsController < ApplicationController
 
   def create
     @location = Location.find(params[:location_id])
-    @crag = @location.crags.build(crags_params)
+    @crag = @location.crags.build(crag_params)
     if @crag.save
       redirect_to location_path(@location)
     else
@@ -23,9 +24,21 @@ class CragsController < ApplicationController
     end
   end
 
+  def edit
+    @crag = Crag.find(params[:id])
+    @location = Location.find(params[:location_id])
+  end
+
+  def update
+    @location = Location.find(params[:location_id])
+    @crag = Crag.find(params[:id])
+    @crag.update(crag_params)
+    redirect_to location_path(@location)
+  end
+
   private
 
-  def crags_params
-    params.require(:crag).permit(:name, :region, :rock_type, :season, :location_id)
+  def crag_params
+    params.require(:crag).permit(:name, :region, :rock_type, :season, :location_id, flags_attributes: [:content], flag_ids: [])
   end
 end

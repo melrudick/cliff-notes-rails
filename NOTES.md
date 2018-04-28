@@ -29,7 +29,9 @@ flag_id, crag_id, comment(more specific to flag)
 * add scope methods
 
 * refactor and use partials
- * Flag - collection checkbox "Need a helmet", "watch for snakes", "crowded before 5"
+ * Flag - collection select "Need a helmet", "watch for snakes", "crowded before 5"
 
  FlagComment "crowded after 5" - north facing walls aren't busy
- "watch for snakes" - george saw a rattler today!
+ "watch for snakes" - george saw a rattler on 1/12/18!
+
+   <%= crag.flags.collect {|flag| flag.content}.join(" ") %>

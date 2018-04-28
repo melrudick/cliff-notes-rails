@@ -1,0 +1,10 @@
+<h1>Add a Flag to <%= @crag.name %></h1>
+
+<%= form_for([@location, @crag]) do |f| %>
+<%= f.collection_check_boxes :flag_ids, Flag.all, :id, :content %>
+<h2>Create a New Flag</h2>
+<%= f.fields_for :flags, @crag.flags.build do |flag| %>
+<%= flag.text_field :content %>
+<% end %>
+<%= f.submit %>
+<% end %>

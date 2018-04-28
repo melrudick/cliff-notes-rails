@@ -1,8 +1,23 @@
 <h1><%= @location.name %></h1>
+
 <%= form_for([@location, @crag]) do |f| %>
-<%= f.text_field :name %>
-<%= f.text_field :region %>
-<%= f.text_field :rock_type %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :region %>
+<%= f.text_field :region %><br>
+<%= f.label :rock_type %>
+<%= f.text_field :rock_type %><br>
+<%= f.label :season %>
 <%= f.text_field :season %>
+
+<h2>Flags</h2>
+
+<%= f.collection_check_boxes :flag_ids, Flag.all, :id, :content %>
+
+<h3>Add a Flag</h3>
+<%= f.fields_for :flags, @crag.flags.build do |flag| %>
+<%= flag.text_field :content %>
+<% end %>
+
 <%= f.submit %>
 <% end %>

@@ -11,7 +11,12 @@
   <p>Region: <%= crag.region %></p>
   <p>Rock Type: <%= crag.rock_type %></p>
   <p>Best Season: <%= crag.season %></p>
-  <%= link_to "Contribute", edit_location_crag_path(@location) %>
+  <p>Flags:
+    <% crag.flags.each do |flag| %>
+    <li><%= flag.content %></li>
+  </p>
+  <% end %>
+  <%= link_to "Contribute a Flag", edit_location_crag_path(@location, crag.id) %>
 
 <% end %>
 </ul>

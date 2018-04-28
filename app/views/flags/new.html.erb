@@ -1,0 +1,8 @@
+
+<h1>Flags</h1>
+
+<%= form_for([@crag, @flag]) do |f| %>
+<%= f.collection_check_boxes :flag_ids, Flag.all, :id, :content %>
+<%= f.submit %>
+<% end %>
+<% end %>
