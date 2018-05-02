@@ -5,16 +5,15 @@
 
 ! * Each location is a link that has_many crags
 
-* Each crag is a link that has attributes, and a Flag class that can be updated.
+! * Each crag is a link that has attributes, and a Flag class that can be updated.
 
 ! * If a user wants to create a crag, they can go by Location, where they will have to option to "Add a Crag".
 
 ! * The fields will be:  -name, -season, rock_type, region
 
-* and Flags (collection and empty field)
+! * and Flags (collection and empty field)
 cragflags  (need a helmet)
-(watch for snakes) - comment
-(directions are off, use gps)
+(watch for snakes)
 _______
 _______
 crags
@@ -35,3 +34,5 @@ flag_id, crag_id, comment(more specific to flag)
  "watch for snakes" - george saw a rattler on 1/12/18!
 
    <%= crag.flags.collect {|flag| flag.content}.join(" ") %>
+
+   * should consider making "crag comments" from users because it makes a whole lot more sense. how do i get the proper join table?

@@ -4,15 +4,18 @@
 <%= f.text_field :name, :placeholder => "enter location name" %><br>
 <h2>Now Add a Crag</h2>
 <%= f.fields_for :crags do |crag| %>
+<p>
 <%= crag.label :name %>
-<%= crag.text_field :name %>
+<%= crag.text_field :name, placeholder: "crag/area name"%><br>
 <%= crag.label :region %>
-<%= crag.text_field :region %>
+<%= crag.text_field :region, placeholder: "general area" %><br>
 <%= crag.label :rock_type %>
-<%= crag.text_field :rock_type %>
+<%= crag.text_field :rock_type, placeholder: "e.g. limestone" %><br>
 <%= crag.label :season %>
-<%= crag.text_field :season %>
+<%= crag.text_field :season, placeholder: "ideal season" %>
+</p>
 
 <% end %>
+
     <%= f.submit %>
     <% end %>

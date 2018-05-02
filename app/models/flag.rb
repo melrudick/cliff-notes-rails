@@ -1,3 +1,3 @@
 class Flag < ApplicationRecord
-  belongs_to :crag
+  has_many :crags, through: :crag_flags
 end
