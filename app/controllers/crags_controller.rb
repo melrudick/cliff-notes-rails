@@ -9,6 +9,11 @@ class CragsController < ApplicationController
     end
   end
 
+  def show
+    @crag = Crag.find(params[:id])
+    @crag_flags = @crag.crag_flags 
+  end
+
   def new
     @crag = Crag.new
     @location = Location.find(params[:location_id])
