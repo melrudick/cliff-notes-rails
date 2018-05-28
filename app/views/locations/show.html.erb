@@ -16,8 +16,11 @@
     <li><%= flag.content %></li>
 
   <% end %>
-
+  <h4>Comments:</h4>
+  <% crag.crag_flags.each do |cflag| %>
+  <li><%= cflag.comment %></li>
+  <% end %>
   <%= link_to "Edit This Crag", edit_location_crag_path(@location, crag.id) %>
-
+  <br><br>
 <% end %>
 </ul>
