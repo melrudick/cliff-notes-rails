@@ -1,4 +1,6 @@
-<h1>Add a Flag to <%= @crag.name %></h1>
+<h1>Editing <%= @crag.name %></h1>
+
+
 
 <%= form_for([@location, @crag]) do |f| %>
 <%= f.collection_check_boxes :flag_ids, Flag.all, :id, :content %>

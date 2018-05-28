@@ -11,7 +11,7 @@ class CragsController < ApplicationController
 
   def show
     @crag = Crag.find(params[:id])
-    @crag_flags = @crag.crag_flags 
+    @crag_flags = @crag.crag_flags
   end
 
   def new
@@ -44,6 +44,6 @@ class CragsController < ApplicationController
   private
 
   def crag_params
-    params.require(:crag).permit(:name, :region, :rock_type, :season, :location_id, flags_attributes: [:content], flag_ids: [])
+    params.require(:crag).permit(:name, :region, :rock_type, :season, :location_id, flags_attributes: [:content], flag_ids: [], crag_flags: [:comment])
   end
 end

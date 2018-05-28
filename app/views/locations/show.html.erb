@@ -14,9 +14,10 @@
   <h3>Flags:</h3>
     <% crag.flags.each do |flag| %>
     <li><%= flag.content %></li>
-  
+
   <% end %>
-  <%= link_to "Contribute a Flag", edit_location_crag_path(@location, crag.id) %>
+
+  <%= link_to "Edit This Crag", edit_location_crag_path(@location, crag.id) %>
 
 <% end %>
 </ul>
