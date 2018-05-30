@@ -7,20 +7,21 @@
 
 <% @location.crags.each do |crag| %>
 
-  <p>Name: <%= crag.name %></p>
+  <h3>Name: <%= crag.name %></h3>
   <p>Region: <%= crag.region %></p>
   <p>Rock Type: <%= crag.rock_type %></p>
   <p>Best Season: <%= crag.season %></p>
-  <h3>Flags:</h3>
-    <% crag.flags.each do |flag| %>
-    <li><%= flag.content %></li>
-    this is where flag.crag_flags.each do will go
-    iterating over comments (crag_flag.comments)
+  <ul>
+  <h4>Flags:</h4>
+    <% crag.crag_flags.each do |cflag| %>
+    <li><%= cflag.flag.content %></li>
+    <ul>
+      <% cflag.comments.each do |comment| %>
+      <li>survey says: <%= comment.text %></li>
+    <% end %>
+  </ul>
   <% end %>
-  <h4>Comments:</h4>
-  <% crag.crag_flags.each do |cflag| %>
-  <li><%= cflag.comment %></li>
-  <% end %>
+</ul>
   <%= link_to "Edit This Crag", edit_location_crag_path(@location, crag.id) %>
   <br><br>
 <% end %>
