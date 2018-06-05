@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  # belongs to user
+  belongs_to :user
   belongs_to :crag_flag
 
 end
