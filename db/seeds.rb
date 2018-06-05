@@ -5,4 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-c = Crag.create(name: "Masone", rock_type: "limestone", season: "spring", location_id: 1)
+# c = Crag.create(name: "Masone", rock_type: "limestone", season: "spring", location_id: 1)
+u = User.create(username: "Jimbo", password: "rockstar")
