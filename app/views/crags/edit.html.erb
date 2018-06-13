@@ -19,7 +19,7 @@
 <%= flag.text_field :content %>
 <% end %>
 <br>
-<%= f.fields_for :crag_flags, @crag.crag_flags.build do |cflag| %>
+<%= f.fields_for :comments, @crag.crag_flags.build do |cflag| %>
 <%= cflag.label :comment %>
 <%= cflag.text_field :comment %>
 <% end %>

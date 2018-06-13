@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user.username = params[:user][:username]
     @user.password = params[:user][:password]
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_path
     else
       render :new
