@@ -14,7 +14,7 @@
 
 <%= f.collection_check_boxes(:flag_ids, Flag.all, :id, :content) do |c| %>
   <li><%= c.check_box + c.text %></li>
-  <% binding.pry %>
+
   <% end %>
 <h3>Add a Flag</h3>
 <%= f.fields_for :flags, @crag.flags.build do |flag| %>
