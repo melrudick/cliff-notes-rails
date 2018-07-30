@@ -3,7 +3,6 @@ class CragsController < ApplicationController
   def index
     if params[:location_id]
       @crags = Location.find(params[:location_id])
-      @flag = Flag.new
     else
       @crags = Crag.all
     end
@@ -11,7 +10,7 @@ class CragsController < ApplicationController
 
   def show
     @crag = Crag.find(params[:id])
-    @crag_flags = @crag.crag_flags
+    @comments = @crag.comments
   end
 
   def new
@@ -44,6 +43,6 @@ class CragsController < ApplicationController
   private
 
   def crag_params
-    params.require(:crag).permit(:name, :region, :rock_type, :season, :location_id, flags_attributes: [:content], flag_ids: [], crag_flags: [:comment])
+    params.require(:crag).permit(:name, :region, :rock_type, :season, :location_id, :user_id, :comments)
   end
 end

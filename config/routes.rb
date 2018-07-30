@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
+  get '/', to: 'application#home'
   resources :users
   get '/signup', to: 'users#new'
   resources :comments
-  get 'flags/new'
+
   resources :locations do
     resources :crags
   end
   resources :locations
-  resources :crags, only: [:new, :create, :show, :edit, :update] do
-    resources :flags
-  end
+  # resources :crags, only: [:new, :create, :show, :edit, :update] do
+  #   resources :comments
+  #   end
   resources :sessions
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'

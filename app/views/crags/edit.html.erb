@@ -10,20 +10,12 @@
   <%= f.label :season %>
   <%= f.text_field :season %>
 
-<h2>Flags</h2>
 
-<%= f.collection_check_boxes(:flag_ids, Flag.all, :id, :content) do |c| %>
-  <li><%= c.check_box + c.text %></li>
-
-  <% end %>
-<h3>Add a Flag</h3>
-<%= f.fields_for :flags, @crag.flags.build do |flag| %>
-  <%= flag.text_field :content %>
-<% end %>
 <br>
-<%= f.fields_for :comments, @crag.crag_flags.build do |cflag| %>
-  <%= cflag.label :comment %>
-  <%= cflag.text_field :comment %>
+Add a Comment:
+<%= f.fields_for :comments do |comment| %>
+  
+  <%= comment.text_field :text %>
 <% end %>
   <%= f.submit %>
 <% end %>

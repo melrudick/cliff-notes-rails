@@ -1,6 +1,7 @@
+<h1><%= @crag.name %></h1>
 <ul>
-<%= @crag.name %>
-<% @crag_flags.each do |cflag| %>
-<%= cflag.comment %>
+
+<% @comments.each do |comment| %>
+<li><%= comment.user.username %> says: <%= comment.text %></li>
 <% end %>
 </ul>

@@ -10,20 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_200818) do
+ActiveRecord::Schema.define(version: 2018_07_30_231754) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "crag_flag_id"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "crag_flags", force: :cascade do |t|
-    t.string "comment"
     t.integer "crag_id"
-    t.integer "flag_id"
+    t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,12 +28,6 @@ ActiveRecord::Schema.define(version: 2018_05_30_200818) do
     t.datetime "updated_at", null: false
     t.integer "location_id"
     t.string "region"
-  end
-
-  create_table "flags", force: :cascade do |t|
-    t.string "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
