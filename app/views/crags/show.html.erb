@@ -1,4 +1,10 @@
 <h1><%= @crag.name %></h1>
+Add a Comment:
+
+<%= form_for(@comment) do |f| %>
+<%= f.hidden_field :crag_id, :value => @crag.id %>
+  <%= f.text_field :text %>
+<% end %>
 <ul>
 
 <% @comments.each do |comment| %>

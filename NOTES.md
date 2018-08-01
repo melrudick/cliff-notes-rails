@@ -18,15 +18,13 @@ crags
 
 * add validations - comment has text
 
-* add omniauth - google
-
-* add scope methods
+* add scope methods - show all comments/comment count for a user
 
 * refactor and use partials
 
-   * should consider making "crag comments" from users because it makes a whole lot more sense. how do i get the proper join table?
+* add omniauth - google - DO LAST
 
-   * How do I start User model where the user has a submittable attribute of comment(text) associated by a crag_flag?
+
     * authentication comes next
     from locations/show:
     <!-- <h4>Flags:</h4>
